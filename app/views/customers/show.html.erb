@@ -1,0 +1,16 @@
+<h3>this single customer page</h3>
+<table class="table table-striped">
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Mobilenumber</th>
+<th>Gender</th>
+</tr>
+<tr>
+<td><%=@customer.name %></td>
+<td><%=@customer.email%></td>
+<td><%=@customer.mobilenumber%></td>
+<td><%=@customer.gender%></td>
+</tr>
+</table>
+<%= link_to "back",customers_path %>

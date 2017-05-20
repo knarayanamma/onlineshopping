@@ -1,0 +1,27 @@
+<h3>this is purches items </h3>
+<table class="table table-striped">
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Mobilenumber</th>
+<th>Gender</th>
+<th>Edit details</th>
+<th>Display single details</th>
+<th>Delete</th>
+</tr>
+<% @customers.each do |i| %>
+<tr>
+<td><%=i.name %></td>
+<td><%=i.email%></td>
+<td><%=i.mobilenumber%></td>
+<td><%=i.gender%></td>
+<td><%= link_to "edit",edit_customer_path(i)%></td>
+<td><%= link_to"Show",customer_path(i)%></td>
+<td><%= link_to "delete customer", i, method: :delete,
+      data: {confirm: "Are you sure you want to delete this customer?" }, class: 'delete' %></td>
+</tr>
+<%end%>
+</table>
+<%= link_to "Add customer",new_customer_path %>
+<%=link_to "SignIn",signin_customers_path%>
+<%=link_to "SignUp",new_customer_path%>
