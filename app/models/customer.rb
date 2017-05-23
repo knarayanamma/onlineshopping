@@ -5,11 +5,7 @@ class Customer < ApplicationRecord
 	 validates :password, presence:true
 	 validates :confirmpassword, presence:true
 	 validates :mobilenumber ,presence: true,numericality:true
-	 before_save :encrypt_password
-	 def encrypt_password
-	 	self.password=Digest::MD5.hexdigest(password)
-	 	self.confirmpassword::MD5.hexdigest(confirmpassword)
-	 end
+
 
 	def self.authenticate(email,password)
 		if@customer=Customer.where(email: email,password: password).last
